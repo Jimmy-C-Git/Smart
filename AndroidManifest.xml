@@ -10,7 +10,7 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    
+
     <application
         android:name="com.cj.smart.CFSApplication"
         android:allowBackup="true"
@@ -53,15 +53,19 @@
         </activity>
         <activity
             android:name="com.cj.other.SizeActivity"
-            android:label="@string/title_activity_size">
+            android:label="@string/title_activity_size" >
         </activity>
         <activity
             android:name="com.cj.photo.PhotoGalleryActivity"
-            android:label="@string/title_activity_size">
+            android:label="@string/title_activity_size" >
         </activity>
         <activity
             android:name="com.cj.photo.PhotoWallActivity"
-            android:label="@string/title_activity_size">
+            android:label="@string/title_activity_size" >
+        </activity>
+        <activity
+            android:name="com.cj.exployer.FileExployerActivity"
+            android:label="@string/title_activity_file_exployer" >
         </activity>
     </application>
 
