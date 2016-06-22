@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <com.cj.smart.MyItemContainer xmlns:android="http://schemas.android.com/apk/res/android"
+     android:id="@+id/container"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants"
+     >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="35dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tvJCBH"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="进仓编号" />
+
+        <TextView
+            android:id="@+id/tvPXJS"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="配箱件数" />
+
+        <TextView
+            android:id="@+id/tvYZJS"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="已装件数" />
+
+<!--   <com.cj.smart.MyItemContainer android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+             -->
+             <com.cj.smart.MyHScrollView
+            android:id="@+id/horizontalScrollView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tvWeight"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="重量" />
+
+                <TextView
+                    android:id="@+id/tvVolume"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="体积" />
+
+                <TextView
+                    android:id="@+id/tvKW"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="库位" />
+
+                <TextView
+                    android:id="@+id/tvCargoRemark"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:text="备注" />
+            </LinearLayout>
+        </com.cj.smart.MyHScrollView><!-- 
+      </com.cj.smart.MyItemContainer>
+     -->
+
+       
+    </LinearLayout>
+
+</com.cj.smart.MyItemContainer>

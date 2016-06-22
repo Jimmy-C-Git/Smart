@@ -1,0 +1,90 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:terry="http://schemas.android.com/apk/res/com.cj.smart"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <com.cj.other.EditTextWithLabel
+            android:id="@+id/edtlWidth"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            terry:LabelText="宽度(像素)："
+            terry:LabelWidth="100dp" />
+
+        <com.cj.other.EditTextWithLabel
+            android:id="@+id/edtlHeight"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            terry:LabelText="高度(像素)："
+            terry:LabelWidth="100dp" />
+
+        <com.cj.other.EditTextWithLabel
+            android:id="@+id/edtlWidthDP"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            terry:LabelText="宽度(dp)："
+            terry:LabelWidth="100dp" />
+
+        <com.cj.other.EditTextWithLabel
+            android:id="@+id/edtlHeightDP"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            terry:LabelText="高度(dp)："
+            terry:LabelWidth="100dp" />
+
+        <com.cj.other.EditTextWithLabel
+            android:id="@+id/edtlWidthCM"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            terry:LabelText="宽度(cm)："
+            terry:LabelWidth="100dp" />
+
+        <com.cj.other.EditTextWithLabel
+            android:id="@+id/edtlHeightCM"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            terry:LabelText="高度(cm)："
+            terry:LabelWidth="100dp" />
+
+        <com.cj.other.ClickTextView
+            android:id="@+id/edtClickTest"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="clickTest" />
+
+         <EditText
+            android:id="@+id/edtTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10">
+        </EditText>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="TextVssssiew"
+            android:textColor="@color/backgroundcolor" />
+
+        <com.cj.other.CompositeEditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            terry:LabelText="高度(inch)：" >
+        </com.cj.other.CompositeEditText>
+    </LinearLayout>
+   
+
+</FrameLayout>

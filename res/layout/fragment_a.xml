@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.cj.smart.AActivity$PlaceholderFragment" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CheckBox" />
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView1_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="btncargo" />
+
+        <Button
+            android:id="@+id/btnNavigateList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="btnNavigateList" />
+
+        <Button
+            android:id="@+id/btnAsyncTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="btnAsyncTask" />
+
+        <Button
+            android:id="@+id/btnMetrics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="btnMetrics" />
+
+        <Button
+            android:id="@+id/btnPhotoWall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="btnPhotoWall" />
+
+    </LinearLayout>
+
+</RelativeLayout>
