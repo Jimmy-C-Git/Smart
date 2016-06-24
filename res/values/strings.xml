@@ -11,5 +11,7 @@
     <string name="title_activity_navigate_list">NavigateListActivity</string>
     <string name="title_activity_async_test">AsyncTestActivity</string>
     <string name="title_activity_size">SizeActivity</string>
+    <string name="title_activity_file_exployer">FileExployerActivity</string>
+    <string name="title_activity_smart_list">SmartListActivity</string>
 
 </resources>

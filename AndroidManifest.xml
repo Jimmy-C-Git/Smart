@@ -67,6 +67,10 @@
             android:name="com.cj.exployer.FileExployerActivity"
             android:label="@string/title_activity_file_exployer" >
         </activity>
+        <activity
+            android:name="com.cj.smart.SmartListActivity"
+            android:label="@string/title_activity_smart_list" >
+        </activity>
     </application>
 
 </manifest>
