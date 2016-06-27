@@ -3,6 +3,7 @@ package com.cj.smart;
 import java.util.ArrayList;
 
 import com.cj.mywidget.SmartListView;
+import com.cj.mywidget.SmartListViewExFromViewGroup;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -14,13 +15,16 @@ import android.widget.Button;
 public class SmartListActivity extends Activity {
 
 	SmartListView smartList;
+	SmartListViewExFromViewGroup smartListViewExFromViewGroup;
 	Button btnRefresh;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_smart_list);
 		//smartList=new SmartListView(this);
-		smartList=(SmartListView) findViewById(R.id.smartList);
+		//smartList=(SmartListView) findViewById(R.id.smartList);
+		smartListViewExFromViewGroup=(SmartListViewExFromViewGroup)findViewById(R.id.smartListViewExFromViewGroup);
+		
 		btnRefresh=(Button)findViewById(R.id.btnRefresh);
 		
 		ArrayList<String> title=new ArrayList<>();
@@ -49,13 +53,14 @@ public class SmartListActivity extends Activity {
 				ArrayList<String>item =new ArrayList<String>();
 				item.add("sum");
 				data.add(item);
-				smartList.loadList();
-				
+				//smartList.loadList();
+				smartListViewExFromViewGroup.loadList();
 			}
 		});
-		smartList.init(title, columnWidth, data);
-		smartList.loadList();
-	
+		/*smartList.init(title, columnWidth, data);
+		smartList.loadList();*/
+		smartListViewExFromViewGroup.init(title, columnWidth, data);
+		smartListViewExFromViewGroup.loadList();
 		
 		//smartList.setAdapter(null);
 	}

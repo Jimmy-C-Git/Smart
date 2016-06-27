@@ -14,11 +14,18 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
 
+            <!--
             <com.cj.mywidget.SmartListView
                 android:id="@+id/smartList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
             </com.cj.mywidget.SmartListView>
+            -->
+
+            <com.cj.mywidget.SmartListViewExFromViewGroup
+                android:id="@+id/smartListViewExFromViewGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
         </LinearLayout>
     </HorizontalScrollView>

@@ -179,7 +179,7 @@ containing a value of this type.
         public static final int progressBar1=0x7f040007;
         public static final int progressBar2=0x7f040009;
         public static final int radioButton1=0x7f04003e;
-        public static final int smartList=0x7f04003b;
+        public static final int smartListViewExFromViewGroup=0x7f04003b;
         public static final int spinner1=0x7f04003f;
         public static final int stateAlwaysHidden=0x7f040005;
         public static final int stateHidden=0x7f040004;
