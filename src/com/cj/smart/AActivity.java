@@ -183,6 +183,16 @@ public class AActivity extends Activity {
 					startActivity(intent);
 				}
 			});
+			Button btnSmartList=(Button)rootView.findViewById(R.id.btnSmartList);
+			btnSmartList.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View arg0) {
+					// TODO Auto-generated method stub
+					Intent intent =new Intent(a,SmartListActivity.class);
+					startActivity(intent);
+				}
+			});
 			Button btnPhotoWall=(Button)rootView.findViewById(R.id.btnPhotoWall);
 			btnPhotoWall.setOnClickListener(new OnClickListener() {
 				
