@@ -71,6 +71,10 @@
             android:name="com.cj.smart.SmartListActivity"
             android:label="@string/title_activity_smart_list" >
         </activity>
+        <activity
+            android:name="com.cj.threedimslidinglayout.ThreeDSlidingLayoutActivity"
+            android:label="@string/title_activity_three_dsliding_layout" >
+        </activity>
     </application>
 
 </manifest>

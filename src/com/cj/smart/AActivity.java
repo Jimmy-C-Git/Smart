@@ -6,6 +6,7 @@ import com.cj.mywidget.NavigateListActivity;
 import com.cj.other.AsyncTestActivity;
 import com.cj.other.SizeActivity;
 import com.cj.photo.PhotoWallActivity;
+import com.cj.threedimslidinglayout.ThreeDSlidingLayoutActivity;
 
 import android.app.Activity;
 import android.app.ActionBar;
@@ -200,6 +201,16 @@ public class AActivity extends Activity {
 				public void onClick(View arg0) {
 					// TODO Auto-generated method stub
 					Intent intent =new Intent(a,PhotoWallActivity.class);
+					startActivity(intent);
+				}
+			});
+			Button btnThreeDSlidingLayout=(Button)rootView.findViewById(R.id.btnThreeDSlidingLayout);
+			btnThreeDSlidingLayout.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View arg0) {
+					// TODO Auto-generated method stub
+					Intent intent =new Intent(a,ThreeDSlidingLayoutActivity.class);
 					startActivity(intent);
 				}
 			});
