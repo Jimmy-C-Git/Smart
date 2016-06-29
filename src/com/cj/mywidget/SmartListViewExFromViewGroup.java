@@ -24,13 +24,13 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 	private ArrayList<String> mColumnWidth;
 	private HashMap<Integer,String> mFooter; 
 	private ArrayList<ArrayList<String>> mData;
-	private int itemCount=0;
 	private int columnCount=0;
 	private View mTitleView,mFooterView;
 	private ListView mListView;
 	private boolean isHaveTitel=false;
 	int firstViewPosition=0;
 	int firstViewTop=0;
+	int totalWidth=0;
 	public SmartListViewExFromViewGroup(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		mListView=new ListView(context);
@@ -45,7 +45,6 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 		mData=data;
 		if(mData!=null)
 		{
-			itemCount=mData.size();
 			if(mData.size()>0)
 				columnCount=mData.get(0).size();
 		}
@@ -65,7 +64,7 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 	}
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-		// TODO Auto-generated method stub
+		
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 		setMeasuredDimension(totalWidth, getMeasuredHeight());
 		for(int i=0;i<getChildCount();i++)
@@ -76,34 +75,12 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 	}
 	public void loadList()
 	{
-		
-		
-		
-		/*if(mTitleView!=null)
-		{
-			LinearLayout ll=(LinearLayout) getItemView();
-			
-			int childCount =ll.getChildCount();
-			for(int i=0;i<childCount;i++)
-			{
-				if(i<mTitle.size())
-				{
-					View view=ll.getChildAt(i);
-					((TextView)view).setText(mTitle.get(i));	
-				}
-					
-			}
-			this.addHeaderView(ll);
-		}*/
-			
 		mListView.setAdapter(new MyListAdapter());
-		//setSelection(lastListPosition);
-		//scrollTo(scrolledX, scrolledY);
 		mListView.setSelectionFromTop(firstViewPosition,firstViewTop);
 	}
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-		// TODO Auto-generated method stub
+		
 		super.onSizeChanged(w, h, oldw, oldh);
 	}
 	private void setItemData(LinearLayout ll,ArrayList<String> data)
@@ -118,7 +95,7 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 				((TextView)view).setText("");
 		}
 	}
-	int totalWidth=0;
+	
 	public View getItemView()
 	{
 		LinearLayout ll=new LinearLayout(getContext());
@@ -147,7 +124,6 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 	}
 	@Override
 	protected void onLayout(boolean arg0, int l, int t, int r, int b) {
-		int meawid=mListView.getMeasuredWidth();
 		if(isHaveTitel)
 		{
 			mTitleView.layout(l, t, r, t+mTitleView.getMeasuredHeight());
@@ -162,7 +138,7 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 
 		@Override
 		public int getCount() {
-			return itemCount;
+			return mData.size();
 		}
 
 		@Override
@@ -185,16 +161,6 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 			}
 			ll=(LinearLayout)convertView;
 			setItemData(ll, mData.get(position));
-			
-			/*int childCount =ll.getChildCount();
-			for(int i=0;i<childCount;i++)
-			{
-				View view=ll.getChildAt(i);
-				if(i<mData.get(position).size())
-					((TextView)view).setText(mData.get(position).get(i));
-				else 
-					((TextView)view).setText("");
-			}*/
 				
 
 			return convertView;
@@ -210,10 +176,10 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 
 	@Override
 	public void onScrollStateChanged(AbsListView arg0, int scrollState) {
-		// TODO Auto-generated method stub
+		
 		if (scrollState == SCROLL_STATE_IDLE) {
 			firstViewPosition=mListView.getFirstVisiblePosition();
-			View view1 =getChildAt(0);
+			View view1 =mListView.getChildAt(0);
 			if(view1!=null)
 				firstViewTop=view1.getTop();
 		}
