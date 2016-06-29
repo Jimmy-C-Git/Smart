@@ -3,6 +3,7 @@ package com.cj.smart;
 import java.util.Properties;
 
 import com.cj.mywidget.NavigateListActivity;
+import com.cj.mywidget.SmartListActivity;
 import com.cj.other.AsyncTestActivity;
 import com.cj.other.SizeActivity;
 import com.cj.photo.PhotoWallActivity;

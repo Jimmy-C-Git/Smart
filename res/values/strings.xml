@@ -14,5 +14,6 @@
     <string name="title_activity_file_exployer">FileExployerActivity</string>
     <string name="title_activity_smart_list">SmartListActivity</string>
     <string name="title_activity_three_dsliding_layout">ThreeDSlidingLayoutActivity</string>
+    <string name="title_activity_slide_down_refresh">SlideDownRefreshActivity</string>
 
 </resources>

@@ -222,10 +222,11 @@ containing a value of this type.
         public static final int activity_photo_gallery=0x7f03000b;
         public static final int activity_photo_wall=0x7f03000c;
         public static final int activity_size=0x7f03000d;
-        public static final int activity_smart_list=0x7f03000e;
-        public static final int activity_three_dsliding_layout=0x7f03000f;
-        public static final int fragment_a=0x7f030010;
-        public static final int fragment_main=0x7f030011;
+        public static final int activity_slide_down_refresh=0x7f03000e;
+        public static final int activity_smart_list=0x7f03000f;
+        public static final int activity_three_dsliding_layout=0x7f030010;
+        public static final int fragment_a=0x7f030011;
+        public static final int fragment_main=0x7f030012;
     }
     public static final class menu {
         public static final int a=0x7f090000;
@@ -243,6 +244,7 @@ containing a value of this type.
         public static final int title_activity_list_view=0x7f060005;
         public static final int title_activity_navigate_list=0x7f060007;
         public static final int title_activity_size=0x7f060009;
+        public static final int title_activity_slide_down_refresh=0x7f06000d;
         public static final int title_activity_smart_list=0x7f06000b;
         public static final int title_activity_three_dsliding_layout=0x7f06000c;
     }

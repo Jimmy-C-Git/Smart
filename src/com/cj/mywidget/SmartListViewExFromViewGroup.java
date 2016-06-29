@@ -35,7 +35,7 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 		super(context, attrs);
 		mListView=new ListView(context);
 		mListView.setOnScrollListener(this);
-		addView(mListView);
+		
 		
 	}
 	public void init(ArrayList<String> title,ArrayList<String> columnWidth,ArrayList<ArrayList<String>> data)
@@ -60,6 +60,18 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 				isHaveTitel=true;
 			}
 			setItemData((LinearLayout)mTitleView,mTitle);
+		}
+		addView(mListView);
+	}
+	@Override
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		// TODO Auto-generated method stub
+		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+		setMeasuredDimension(totalWidth, getMeasuredHeight());
+		for(int i=0;i<getChildCount();i++)
+		{
+			 View childView = getChildAt(i);  
+	         measureChild(childView, widthMeasureSpec, heightMeasureSpec); 
 		}
 	}
 	public void loadList()
@@ -106,11 +118,13 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 				((TextView)view).setText("");
 		}
 	}
+	int totalWidth=0;
 	public View getItemView()
 	{
 		LinearLayout ll=new LinearLayout(getContext());
 		ll.setOrientation(LinearLayout.HORIZONTAL);
 		ll.setMinimumHeight(40);
+		totalWidth=0;
 		for(int i=0;i<columnCount;i++)
 		{
 			
@@ -118,9 +132,13 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 			if(i<mColumnWidth.size())
 			{
 				int width=Tools.str2int(mColumnWidth.get(i));
-				tv.setLayoutParams(new LayoutParams(width==0?0:width, LayoutParams.WRAP_CONTENT));
+				tv.setLayoutParams(new LayoutParams(width==0?50:width, LayoutParams.WRAP_CONTENT));
+				totalWidth+=(width==0?50:width);
 			}else 
+			{
 				tv.setLayoutParams(new LayoutParams(50, LayoutParams.WRAP_CONTENT));
+				totalWidth+=50;
+			}
 				
 			
 			ll.addView(tv);
@@ -132,8 +150,8 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 		int meawid=mListView.getMeasuredWidth();
 		if(isHaveTitel)
 		{
-			mTitleView.layout(l, t, r, t+mTitleView.getHeight());
-			mListView.layout(l, t+mTitleView.getHeight(), r, b);
+			mTitleView.layout(l, t, r, t+mTitleView.getMeasuredHeight());
+			mListView.layout(l, t+mTitleView.getMeasuredHeight(), r, b);
 		}else {
 			mListView.layout(l, t, r, b);
 		}

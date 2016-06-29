@@ -1,9 +1,10 @@
-package com.cj.smart;
+package com.cj.mywidget;
 
 import java.util.ArrayList;
 
-import com.cj.mywidget.SmartListView;
-import com.cj.mywidget.SmartListViewExFromViewGroup;
+import com.cj.smart.R;
+import com.cj.smart.R.id;
+import com.cj.smart.R.layout;
 
 import android.app.Activity;
 import android.os.Bundle;

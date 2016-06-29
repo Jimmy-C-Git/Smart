@@ -68,12 +68,16 @@
             android:label="@string/title_activity_file_exployer" >
         </activity>
         <activity
-            android:name="com.cj.smart.SmartListActivity"
+            android:name="com.cj.mywidget.SmartListActivity"
             android:label="@string/title_activity_smart_list" >
         </activity>
         <activity
             android:name="com.cj.threedimslidinglayout.ThreeDSlidingLayoutActivity"
             android:label="@string/title_activity_three_dsliding_layout" >
+        </activity>
+        <activity
+            android:name="com.cj.slidedownrefresh.SlideDownRefreshActivity"
+            android:label="@string/title_activity_slide_down_refresh" >
         </activity>
     </application>
 
