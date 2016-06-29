@@ -7,6 +7,7 @@ import com.cj.mywidget.SmartListActivity;
 import com.cj.other.AsyncTestActivity;
 import com.cj.other.SizeActivity;
 import com.cj.photo.PhotoWallActivity;
+import com.cj.slidedownrefresh.SlideDownRefreshActivity;
 import com.cj.threedimslidinglayout.ThreeDSlidingLayoutActivity;
 
 import android.app.Activity;
@@ -212,6 +213,16 @@ public class AActivity extends Activity {
 				public void onClick(View arg0) {
 					// TODO Auto-generated method stub
 					Intent intent =new Intent(a,ThreeDSlidingLayoutActivity.class);
+					startActivity(intent);
+				}
+			});
+			Button btnSlideRefresh=(Button)rootView.findViewById(R.id.btnSlideRefresh);
+			btnSlideRefresh.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View arg0) {
+					// TODO Auto-generated method stub
+					Intent intent =new Intent(a,SlideDownRefreshActivity.class);
 					startActivity(intent);
 				}
 			});

@@ -64,14 +64,18 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 	}
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-		
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-		setMeasuredDimension(totalWidth, getMeasuredHeight());
+		
+		int measureWidth=0;
 		for(int i=0;i<getChildCount();i++)
 		{
 			 View childView = getChildAt(i);  
 	         measureChild(childView, widthMeasureSpec, heightMeasureSpec); 
+	         measureWidth=Math.max(measureWidth, childView.getMeasuredWidth());
 		}
+		
+		setMeasuredDimension(measureWidth, getMeasuredHeight());
+		
 	}
 	public void loadList()
 	{
