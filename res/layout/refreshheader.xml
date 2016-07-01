@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content" 
+    android:minHeight="200dp"
+    android:background="#FFFFFF">
 
     <TextView
         android:id="@+id/tvRefereshStatus"
@@ -9,6 +11,14 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="" />
+        android:text="123"/>
+
+    <ProgressBar
+        android:id="@+id/pbRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/tvRefereshStatus"
+        android:visibility="gone" />
 
 </RelativeLayout>

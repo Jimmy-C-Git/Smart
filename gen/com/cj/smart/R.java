@@ -124,7 +124,7 @@ containing a value of this type.
         public static final int selectors=0x7f020006;
     }
     public static final class id {
-        public static final int action_settings=0x7f040054;
+        public static final int action_settings=0x7f040055;
         public static final int btnAsyncTask=0x7f040049;
         public static final int btnCancel=0x7f040029;
         public static final int btnClockWise=0x7f04002f;
@@ -184,6 +184,7 @@ containing a value of this type.
         public static final int menuButton=0x7f040041;
         public static final int myhead=0x7f04000c;
         public static final int navigateListView=0x7f04002d;
+        public static final int pbRefresh=0x7f040054;
         public static final int progressBar1=0x7f040007;
         public static final int progressBar2=0x7f040009;
         public static final int radioButton1=0x7f040045;
