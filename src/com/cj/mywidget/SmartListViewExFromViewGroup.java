@@ -3,14 +3,15 @@ package com.cj.mywidget;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.cj.mywidget.SmartListView.MyListAdapter;
 import com.cj.tools.Tools;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -31,11 +32,20 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 	int firstViewPosition=0;
 	int firstViewTop=0;
 	int totalWidth=0;
+	private View headerDivider;
 	public SmartListViewExFromViewGroup(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		mListView=new ListView(context);
 		mListView.setOnScrollListener(this);
+		headerDivider =new View(context);
+		headerDivider.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, 1));
+		headerDivider.setBackgroundColor(Color.BLACK);
+		addView(headerDivider);
+		addView(mListView);
 		
+	}
+	public void init(ArrayList<String> title,ArrayList<Integer> columnWidth,ArrayList<String> columnIndex,ArrayList<ItemInfo> dataNode)
+	{
 		
 	}
 	public void init(ArrayList<String> title,ArrayList<String> columnWidth,ArrayList<ArrayList<String>> data)
@@ -55,12 +65,31 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 			if(!isHaveTitel)
 			{
 				mTitleView=getItemView();
-				addView(mTitleView);
+				addView(mTitleView,0);
 				isHaveTitel=true;
 			}
 			setItemData((LinearLayout)mTitleView,mTitle);
 		}
-		addView(mListView);
+		
+	}
+	public void init(String[] listTitle, String[] columnWidth,
+			ArrayList<ArrayList<String>> data) {
+		ArrayList<String> title=new ArrayList<String>();
+		for(int i=0;i<listTitle.length;i++)
+		{
+			title.add(listTitle[i]);
+		}
+		ArrayList<String> column=new ArrayList<String>();
+		for(int i=0;i<columnWidth.length;i++)
+		{
+			column.add(columnWidth[i]);
+		}
+		init(title,column,data);
+		
+	}
+	public void setOnItemClickListener(OnItemClickListener li)
+	{
+		mListView.setOnItemClickListener(li);
 	}
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -80,6 +109,11 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 	public void loadList()
 	{
 		mListView.setAdapter(new MyListAdapter());
+		mListView.setSelectionFromTop(firstViewPosition,firstViewTop);
+	}
+	public void setAdapter(MyListAdapter adapter)
+	{
+		mListView.setAdapter(adapter);
 		mListView.setSelectionFromTop(firstViewPosition,firstViewTop);
 	}
 	@Override
@@ -131,9 +165,11 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 		if(isHaveTitel)
 		{
 			mTitleView.layout(l, t, r, t+mTitleView.getMeasuredHeight());
-			mListView.layout(l, t+mTitleView.getMeasuredHeight(), r, b);
+			headerDivider.layout(l, t+mTitleView.getMeasuredHeight(), r, t+mTitleView.getMeasuredHeight()+headerDivider.getMeasuredHeight());
+			mListView.layout(l, t+mTitleView.getMeasuredHeight()+headerDivider.getMeasuredHeight(), r, b);
 		}else {
-			mListView.layout(l, t, r, b);
+			headerDivider.layout(l, t, r, t+headerDivider.getMeasuredHeight());
+			mListView.layout(l, t+headerDivider.getMeasuredHeight(), r, b);
 		}
 			
 		
@@ -188,5 +224,6 @@ public class SmartListViewExFromViewGroup extends ViewGroup implements OnScrollL
 				firstViewTop=view1.getTop();
 		}
 	}
+	
 
 }
