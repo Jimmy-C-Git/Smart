@@ -184,7 +184,7 @@ containing a value of this type.
         public static final int menuButton=0x7f040041;
         public static final int myhead=0x7f04000c;
         public static final int navigateListView=0x7f04002d;
-        public static final int pbRefresh=0x7f040054;
+        public static final int pbRefresh=0x7f040053;
         public static final int progressBar1=0x7f040007;
         public static final int progressBar2=0x7f040009;
         public static final int radioButton1=0x7f040045;
@@ -203,7 +203,7 @@ containing a value of this type.
         public static final int tvJCBH=0x7f040014;
         public static final int tvKW=0x7f04001a;
         public static final int tvPXJS=0x7f040015;
-        public static final int tvRefereshStatus=0x7f040053;
+        public static final int tvRefereshStatus=0x7f040054;
         public static final int tvVolume=0x7f040019;
         public static final int tvWeight=0x7f040018;
         public static final int tvYZJS=0x7f040016;
