@@ -23,6 +23,7 @@ public class SizeActivity extends Activity {
 	
 	EditText edtTest;
 	ClickTextView clickText;
+	private PullDownEditText pullDown;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -102,6 +103,8 @@ public class SizeActivity extends Activity {
 		edtlWidthCM=(EditTextWithLabel) findViewById(R.id.edtlWidthCM);
 		edtlHeightCM=(EditTextWithLabel) findViewById(R.id.edtlHeightCM);
 		edtTest=(EditText)findViewById(R.id.edtTest);
+		pullDown=(PullDownEditText)findViewById(R.id.pullDown);
+		pullDown.init(new String[]{"1","2","3","4","5"});
 	}
 	
 }

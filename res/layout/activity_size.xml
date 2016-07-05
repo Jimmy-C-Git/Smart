@@ -78,12 +78,13 @@
             android:clickable="true"
             android:text="TextVssssiew"
             android:textColor="@color/backgroundcolor" />
-
-        <com.cj.other.CompositeEditText
-            android:layout_width="250dp"
+        
+        <com.cj.other.PullDownEditText
+            android:id="@+id/pullDown"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            terry:LabelText="高度(inch)：" >
-        </com.cj.other.CompositeEditText>
+            terry:LabelText="我是头"
+            terry:LabelWidth="100dp"/>
     </LinearLayout>
    
 
